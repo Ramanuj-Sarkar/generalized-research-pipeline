@@ -1,0 +1,40 @@
+name: grad_school_outreach
+
+connectors:
+  - arxiv
+  - web_search
+
+arxiv_max_results: 10
+
+web_search_queries:
+  - "{entity} lab research focus"
+  - "{entity} professor recent grants"
+
+research_prompt: |
+  You are researching Professor {entity} ahead of a PhD application.
+  Using the arXiv papers and search results provided, summarize:
+  1. Their current research focus and recent shifts in direction
+  2. Key terminology and framing they use for their research area
+  3. Any recent grants, lab announcements, or open positions
+  Be concise and cite specific paper titles where relevant.
+
+tailor_prompt: |
+  Rewrite the statement of purpose excerpt below so it uses {entity}'s
+  research vocabulary and references genuinely relevant overlap with the
+  candidate's real background. Do not fabricate research experience or
+  skills not present in the original. If no honest overlap exists in a
+  section, leave it unchanged.
+
+outreach_prompt: |
+  Draft a 3-line email to Professor {entity} expressing interest in
+  joining their lab. Reference one specific paper or research direction
+  from the findings. Under 80 words. No generic flattery.
+
+validation_prompt: |
+  Compare the tailored statement of purpose against the original. Flag
+  any research experience, skill, or claim that was added or embellished
+  beyond wording changes. If none, say "No fabrication detected."
+
+rubric:
+  match_on: ["research_keywords", "methodology_overlap"]
+  tone: "precise, technically literate, humble"

@@ -1,0 +1,44 @@
+name: resume_outreach
+
+connectors:
+  - web_search
+
+web_search_queries:
+  - "{entity} latest earnings call highlights"
+  - "{entity} product launch 2026"
+  - "{entity} team structure engineering leadership"
+  - "{entity} company priorities roadmap"
+
+research_prompt: |
+  You are researching {entity} for a job application. Using the search
+  results provided, summarize:
+  1. Recent earnings call highlights or business priorities
+  2. Recent product launches or announcements
+  3. Team structure / org details if available
+  4. Stated near-term priorities, in the company's own words
+  Extract exact terminology and phrases the company uses — these will be
+  used to tailor a resume. Be concise. Cite which query each fact came from.
+
+tailor_prompt: |
+  Rewrite the resume bullets below so they use {entity}'s exact vocabulary
+  from the findings (product names, priority terms, team names) wherever
+  it's a genuine and honest match to the candidate's real experience.
+  Do NOT fabricate experience, metrics, or claims not present in the
+  original bullets. If a bullet has no honest match to the findings,
+  leave it substantively unchanged. Return the full rewritten bullet list.
+
+outreach_prompt: |
+  Draft a 3-line cold email to the hiring manager at {entity}. Reference
+  one specific, genuine detail from the findings (not generic flattery).
+  Keep it under 80 words total. No subject line needed unless asked.
+
+validation_prompt: |
+  Compare the tailored resume bullets against the original. Flag any bullet
+  where a claim, metric, or scope was added or changed beyond wording/
+  vocabulary. List flagged bullets plainly; if none, say "No fabrication
+  detected."
+
+rubric:
+  match_on: ["product_names", "stated_priorities", "team_names"]
+  max_bullets: 6
+  tone: "professional, specific, no buzzword-stuffing"

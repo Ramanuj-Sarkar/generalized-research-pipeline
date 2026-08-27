@@ -1,0 +1,12 @@
+Problem: Small e-commerce brands lose 15-20% of revenue to cart abandonment, and most
+existing recovery tools rely on generic email sequences that convert poorly because
+they ignore why a specific customer hesitated.
+
+Solution: We built a checkout-recovery product that infers the likely reason for
+abandonment from on-site behavior (price hesitation, shipping cost surprise, payment
+friction) and sends a targeted follow-up matched to that reason instead of a one-size
+email. In our first 6 months with 40 pilot merchants, recovered-cart revenue increased
+by an average of 22% over their previous recovery tooling.
+
+We are raising a seed round to expand the behavioral model to more verticals and
+build out a self-serve onboarding flow.

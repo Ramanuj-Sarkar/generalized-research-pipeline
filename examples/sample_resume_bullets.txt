@@ -1,0 +1,4 @@
+- Led migration of internal data pipeline from batch to streaming architecture, reducing latency by 40%.
+- Built and shipped a customer-facing analytics dashboard used by 200+ enterprise clients.
+- Mentored 3 junior engineers and established code review standards for the team.
+- Reduced cloud infrastructure costs by 25% through resource right-sizing and caching improvements.

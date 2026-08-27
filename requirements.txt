@@ -1,0 +1,4 @@
+pyyaml>=6.0
+requests>=2.31
+openai>=1.0             # optional, only needed if using the openai provider
+python-dotenv>=1.0      # loads .env into the environment for cli.py

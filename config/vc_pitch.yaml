@@ -1,0 +1,39 @@
+name: vc_pitch
+
+connectors:
+  - web_search
+
+web_search_queries:
+  - "{entity} fund investment thesis"
+  - "{entity} venture capital recent investments"
+  - "{entity} partner blog post 2026"
+  - "{entity} portfolio companies"
+
+research_prompt: |
+  You are researching the VC fund {entity} ahead of a pitch. Summarize:
+  1. Their stated investment thesis, in their own words
+  2. Recent investments and what they suggest about current focus
+  3. Any individual partner's publicly stated interests or writing
+  4. Portfolio companies that might be comparable and relevant
+  Extract exact thesis language and terminology.
+
+tailor_prompt: |
+  Rewrite the pitch deck's problem/solution framing below so the language
+  mirrors {entity}'s stated thesis wherever there's a genuine, honest fit.
+  Do not overstate traction, market size, or claims not in the original.
+  If no honest match exists for a section, leave it unchanged.
+
+outreach_prompt: |
+  Draft a 3-line intro email to the specific partner identified in the
+  findings (or the fund generally if no partner was identified).
+  Reference one concrete detail — a thesis point or portfolio company —
+  not generic flattery. Under 80 words.
+
+validation_prompt: |
+  Compare the tailored deck language against the original. Flag any
+  exaggeration of traction, market size, or claims not supported by the
+  original. If none, say "No overstatement detected."
+
+rubric:
+  match_on: ["thesis_keywords", "portfolio_overlap", "partner_interests"]
+  tone: "confident, specific, no hype language"

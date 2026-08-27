@@ -1,0 +1,10 @@
+My interest in machine learning began during an undergraduate research project where I
+built a model to detect anomalies in sensor data from a campus energy grid. That project
+introduced me to the gap between models that perform well on benchmarks and models that
+hold up under real-world distribution shift, a gap I have been chasing ever since.
+
+Since then, I have worked on two research projects applying time-series models to
+noisy, partially-labeled data, and I contributed to an open-source library for
+data augmentation. I am drawn to research that treats robustness and generalization
+not as an afterthought but as the central problem, and I want to continue that work
+in a PhD program with faculty who study these questions rigorously.
